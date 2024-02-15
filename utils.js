@@ -53,3 +53,25 @@ function getRandomColor() {
     const hue = 290 + Math.random() * 260;
     return "hsl(" + hue + ", 100%, 60%)";
 }
+
+function generateTraffic(laneNumber) {
+    let traffic = [];
+    for (let i = 0; i < laneNumber; i++) {
+        if (i % 2 == 0) {
+            traffic.push(
+                new Car(road.getLaneCenter(i), -100, 30, 50, "DUMMY", 2),
+                new Car(road.getLaneCenter(i), -290, 30, 50, "DUMMY", 2),
+                new Car(road.getLaneCenter(i), -500, 30, 50, "DUMMY", 2),
+                new Car(road.getLaneCenter(i), -690, 30, 50, "DUMMY", 2),
+                new Car(road.getLaneCenter(i), -900, 30, 50, "DUMMY", 2));
+        } else {
+            traffic.push(
+            new Car(road.getLaneCenter(i), -200, 30, 50, "DUMMY", 2),
+            new Car(road.getLaneCenter(i), -400, 30, 50, "DUMMY", 2),
+            new Car(road.getLaneCenter(i), -600, 30, 50, "DUMMY", 2),
+            new Car(road.getLaneCenter(i), -800, 30, 50, "DUMMY", 2));
+        }
+    }
+
+    return traffic;
+}

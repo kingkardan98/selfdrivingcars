@@ -9,6 +9,7 @@ class Visualizer{
         const levelHeight = height / network.levels.length;
 
         for (let i = 0; i < network.levels.length; i++) {
+            let isFirstLevel = i == 0;
             const levelTop = top + lerp(
                 height - levelHeight,
                 0,
@@ -23,17 +24,24 @@ class Visualizer{
                 width, levelHeight,
                 i == network.levels.length - 1
                 ? ['⇧', '⇦', '⇨', '⇩']
-                : []
+                : [],
+                isFirstLevel
             );
         }
     }
 
-    static drawLevel(ctx, level, left, top, width, height, outputLabels){
+    static drawLevel(ctx, level, left, top, width, height, outputLabels, isFirstLevel = false){
         const right = left + width;
         const bottom = top + height;
 
+        let nodeRadius = 0;
+
         const { inputs, outputs, weights, biases } = level;
-        const nodeRadius = 10;
+        if (isFirstLevel) {
+            nodeRadius = 5;
+        } else {
+            nodeRadius = 10;
+        }
 
         for (let i = 0; i < inputs.length; i++) {
             for (let j = 0; j < outputs.length; j++) {
