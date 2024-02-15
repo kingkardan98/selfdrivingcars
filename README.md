@@ -19,7 +19,7 @@ There are three small buttons:
 
 - **Delete** (🗑️): this deletes the currently saved best brain, and resets the cars to random brains.
 
-- **Load best** (⭐): this loads in the best brain I've personally trained, which is capable of weaving through all traffic, and then going on indefinetely. It was three rough hours but it was worth it.
+- **Load best** (⭐): this loads in the best brain I've personally trained, which is capable of weaving through all traffic, and then going on indefinetely. It was three rough hours but it was worth it. Hit the star, refresh the page and watch the magic!
 
 You can play with many parameters, to make it as easy or as hard as you want!
 

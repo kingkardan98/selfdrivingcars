@@ -40,9 +40,6 @@ function discard(){
 function loadBest() {
     localStorage.setItem("bestBrain",
     trainedBrain);
-
-    window.location.reload();
-    return false;
 }
 
 function generateCars(N){
