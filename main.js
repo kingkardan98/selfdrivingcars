@@ -41,7 +41,7 @@ function loadBest() {
     localStorage.setItem("bestBrain",
     trainedBrain);
 
-    location.reload();
+    window.location.reload();
     return false;
 }
 
