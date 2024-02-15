@@ -42,6 +42,7 @@ function loadBest() {
     trainedBrain);
 
     location.reload();
+    return false;
 }
 
 function generateCars(N){
