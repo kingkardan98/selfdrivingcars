@@ -4,13 +4,14 @@ const networkCanvas = document.getElementById("networkCanvas");
 networkCanvas.width = 300;
 
 const laneQuantity = 5;
+const mutationPercentage = 0.05;
 
 const carCtx = carCanvas.getContext("2d");
 const networkCtx = networkCanvas.getContext("2d");
 
 const road = new Road(carCanvas.width/2,carCanvas.width*0.9, 5);
 
-const N = 500;
+const N = 100;
 const cars = generateCars(N);
 let bestCar = cars[0];
 if (localStorage.getItem("bestBrain")){
@@ -18,7 +19,7 @@ if (localStorage.getItem("bestBrain")){
         cars[i].brain = JSON.parse(
             localStorage.getItem("bestBrain"));
         if(i != 0){
-            NeuralNetwork.mutate(cars[i].brain, 0.05);
+            NeuralNetwork.mutate(cars[i].brain, mutationPercentage);
         }
     }
 }
