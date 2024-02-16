@@ -4,7 +4,7 @@ const networkCanvas = document.getElementById("networkCanvas");
 networkCanvas.width = 300;
 
 const laneQuantity = 5;
-const mutationPercentage = 0.05;
+const mutationPercentage = 0.2;
 
 const carCtx = carCanvas.getContext("2d");
 const networkCtx = networkCanvas.getContext("2d");
